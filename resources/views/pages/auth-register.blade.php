@@ -56,8 +56,8 @@
                                           </fieldset>
                                       </div>
                                   </div>
-                                  <a href="auth-login" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
-                                  <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>
+                                  <a href="login" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
+{{--                                  <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>--}}
                               </form>
                           </div>
                       </div>

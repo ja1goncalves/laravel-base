@@ -12,6 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="21872860-cade-4214-bdb4-2f71334a3b0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Acl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Acl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth-forgot-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth-forgot-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth-register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth-register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth-reset-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth-reset-password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panels/breadcrumb.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/breadcrumb.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/panels/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,6 +165,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -173,6 +183,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Entities" />
+      <recent name="$PROJECT_DIR$/database/migrations" />
+      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,7 +206,9 @@
       <workItem from="1604085559724" duration="16218000" />
       <workItem from="1604414174516" duration="1213000" />
       <workItem from="1604451034350" duration="1236000" />
-      <workItem from="1604496099180" duration="8272000" />
+      <workItem from="1604496099180" duration="14905000" />
+      <workItem from="1604535349825" duration="8257000" />
+      <workItem from="1604590173822" duration="4922000" />
     </task>
     <servers />
   </component>
@@ -209,12 +225,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2267" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604104395208">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
     <state x="2267" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604104395208" />
+    <state x="2405" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604515501456">
+      <screen x="1366" y="0" width="2560" height="1080" />
+    </state>
+    <state x="2405" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604515501456" />
     <state width="2462" height="275" key="GridCell.Tab.0.bottom" timestamp="1604105707694">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
@@ -239,13 +260,13 @@
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
     <state x="2286" y="182" width="762" height="749" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604098433839" />
-    <state x="1907" y="166" width="1234" height="725" key="find.popup" timestamp="1604502461251">
+    <state x="1907" y="166" width="1234" height="725" key="find.popup" timestamp="1604543749111">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
-    <state x="1907" y="166" width="1234" height="725" key="find.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604502461251" />
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604501385219">
+    <state x="1907" y="166" width="1234" height="725" key="find.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604543749111" />
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604593210100">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604501385219" />
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604593210100" />
   </component>
 </project>

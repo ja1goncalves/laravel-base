@@ -33,9 +33,10 @@
                 <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item" href="page-user-profile"><i class="feather icon-user"></i> Edit Profile</a>
                   <a class="dropdown-item customizer-toggle" href="javascript:void(0)"><i class="feather icon-settings fa fa-spin fa-fw white"></i> Costumizer</a>
-                  <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login"><i
-                      class="feather icon-power"></i> Logout</a>
-                  <form id="logout-form" action="login" method="POST" style="display: none;">
+                  <a class="dropdown-item text-danger" ref="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();"><i class="feather icon-power"></i> Logout</a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                   </form>
             </div>

@@ -31,7 +31,7 @@
                                   </div>
                               </form>
                               <div class="float-md-left d-block mb-1">
-                                  <a href="auth-login" class="btn btn-outline-primary btn-block px-75">Back to Login</a>
+                                  <a href="login" class="btn btn-outline-primary btn-block px-75">Back to Login</a>
                               </div>
                               <div class="float-md-right d-block mb-1">
                                   <a href="#" class="btn btn-primary btn-block px-75">Recover Password</a>

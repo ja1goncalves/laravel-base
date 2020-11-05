@@ -79,7 +79,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-    
+
     'locale' => "en",
 
     /*
@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
         /*
          * Package Service Providers...
          */

@@ -1,6 +1,6 @@
 @extends('layouts/fullLayoutMaster')
 
-@section('title', 'Login Page')
+@section('title', 'Página de Login')
 
 @section('page-style')
 {{-- Page Css files --}}
@@ -9,20 +9,20 @@
 
 @section('content')
 <section class="row flexbox-container">
-  <div class="col-xl-8 col-11 d-flex justify-content-center">
-    <div class="card bg-authentication rounded-0 mb-0">
+  <div class="d-flex justify-content-center w-100 h-100">
+    <div class="col-12 card bg-authentication rounded-0 mb-0">
       <div class="row m-0">
-        <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+        <div class="col-lg-12 d-lg-block d-none text-center align-self-center px-1 py-0">
           <img src="{{ asset('images/pages/login.png') }}" alt="branding logo">
         </div>
-        <div class="col-lg-6 col-12 p-0">
-          <div class="card rounded-0 mb-0 px-2">
+        <div class="col-lg-12 col-12 p-0">
+          <div class="card rounded-0 mb-0" style="padding-left: 18rem !important;padding-right: 18rem !important;">
             <div class="card-header pb-1">
               <div class="card-title">
-                <h4 class="mb-0">Login</h4>
+                <h4 class="mb-0">Entrar</h4>
               </div>
             </div>
-            <p class="px-2">Welcome back, please login to your account.</p>
+            <p class="px-2">Bem-vindo de volta, por favor insira as credenciais de sua conta.</p>
             <div class="card-content">
               <div class="card-body pt-1">
                 <form method="POST" action="{{ route('login') }}">
@@ -30,13 +30,12 @@
                   <fieldset class="form-label-group form-group position-relative has-icon-left">
 
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                      name="email" placeholder="E-Mail Address" value="{{ old('email') }}" required autocomplete="email"
-                      autofocus>
+                      name="email" placeholder="E-Mail" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                     <div class="form-control-position">
                       <i class="feather icon-user"></i>
                     </div>
-                    <label for="email">E-Mail Address</label>
+                    <label for="email">E-Mail</label>
                     @error('email')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -47,12 +46,12 @@
                   <fieldset class="form-label-group position-relative has-icon-left">
 
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                      name="password" placeholder="Password" required autocomplete="current-password">
+                      name="password" placeholder="Senha" required autocomplete="current-password">
 
                     <div class="form-control-position">
                       <i class="feather icon-lock"></i>
                     </div>
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
                     @error('password')
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -69,31 +68,19 @@
                               <i class="vs-icon feather icon-check"></i>
                             </span>
                           </span>
-                          <span class="">Remember me</span>
+                          <span class="">Manter conectado</span>
                         </div>
                       </fieldset>
                     </div>
                     @if (Route::has('password.request'))
                     <div class="text-right"><a class="card-link" href="{{ route('password.request') }}">
-                        Forgot Password?
+                        Esqueceu sua senha?
                       </a></div>
                     @endif
 
                   </div>
-                  <a href="register" class="btn btn-outline-primary float-left btn-inline">Register</a>
-                  <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
+                  <button type="submit" class="btn btn-primary float-right btn-inline mb-2">Login</button>
                 </form>
-              </div>
-            </div>
-            <div class="login-footer">
-              <div class="divider">
-                <div class="divider-text">OR</div>
-              </div>
-              <div class="footer-btn d-inline">
-                <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
-                <a href="#" class="btn btn-twitter white"><span class="fa fa-twitter"></span></a>
-                <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>
-                <a href="#" class="btn btn-github"><span class="fa fa-github-alt"></span></a>
               </div>
             </div>
           </div>

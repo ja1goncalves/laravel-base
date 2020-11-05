@@ -41,7 +41,7 @@
                                   </fieldset>
                                   <div class="row pt-2">
                                       <div class="col-12 col-md-6 mb-1">
-                                          <a href="auth-login" class="btn btn-outline-primary btn-block px-0">Go Back to Login</a>
+                                          <a href="login" class="btn btn-outline-primary btn-block px-0">Go Back to Login</a>
                                       </div>
                                       <div class="col-12 col-md-6 mb-1">
                                           <button type="submit" class="btn btn-primary btn-block px-0">Reset</button>

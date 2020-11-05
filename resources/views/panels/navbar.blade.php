@@ -158,7 +158,7 @@
                 <a class="dropdown-item" href="app-email"><i class="feather icon-mail"></i> My Inbox</a>
                 <a class="dropdown-item" href="app-todo"><i class="feather icon-check-square"></i> Task</a>
                 <a class="dropdown-item" href="app-chat"><i class="feather icon-message-square"></i> Chats</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login"><i
+                <div class="dropdown-divider"></div><a class="dropdown-item" href="login"><i
                     class="feather icon-power"></i> Logout</a>
                 <form id="logout-form" action="login" method="POST" style="display: none;">
                   @csrf

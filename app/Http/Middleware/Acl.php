@@ -44,8 +44,7 @@ class Acl
      */
     protected $usersModulesRepository;
 
-    public function __construct(ModulesRepository $modulesRepository,
-                                UsersModulesRepository $usersModulesRepository)
+    public function __construct(ModulesRepository $modulesRepository, UsersModulesRepository $usersModulesRepository)
     {
         $this->modulesRepository = $modulesRepository;
         $this->usersModulesRepository = $usersModulesRepository;
@@ -55,14 +54,14 @@ class Acl
         $this->getModuleAndAction();
     }
 
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
-    public function handle($request, Closure $next)
+  /**
+   * Handle an incoming request.
+   *
+   * @param \Illuminate\Http\Request $request
+   * @param \Closure $next
+   * @return mixed
+   */
+    public function handle(\Illuminate\Http\Request $request, Closure $next)
     {
         if (!$this->checkPermissions()) {
             return response()->json([
