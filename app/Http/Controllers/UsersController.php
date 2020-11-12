@@ -22,7 +22,7 @@ class UsersController extends Controller
     /**
      * @var UsersService
      */
-    protected $services;
+    protected $service;
 
     /**
      * @var UsersValidator
@@ -37,7 +37,7 @@ class UsersController extends Controller
      */
     public function __construct(UsersService $services, UsersValidator $validator)
     {
-        $this->services = $services;
+        $this->service = $services;
         $this->validator  = $validator;
     }
 
@@ -48,7 +48,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = $this->services->all()['data'];
+        $users = $this->service->all()['data'];
         $breadcrumbs = [
           ['link'=>"dashboard-analytics",'name'=>"Home"],
           ['link'=>"dashboard-analytics",'name'=>"Pages"],
@@ -77,7 +77,7 @@ class UsersController extends Controller
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
 
-            $user = $this->repository->create($request->all());
+            $user = $this->service->create($request->all());
 
             $response = [
                 'message' => 'Users created.',
@@ -111,7 +111,7 @@ class UsersController extends Controller
      */
     public function show(int $id)
     {
-        $user = $this->services->find($id)['data'];
+        $user = $this->service->find($id)['data'];
         $breadcrumbs = [
           ['link'=>"dashboard-analytics",'name'=>"Home"],
           ['link'=>"dashboard-analytics",'name'=>"Pages"],
@@ -136,7 +136,7 @@ class UsersController extends Controller
      */
     public function edit(int $id)
     {
-        $user = $this->services->find($id);
+        $user = $this->service->find($id);
         $breadcrumbs = [
           ['link'=>"dashboard-analytics",'name'=>"Home"],
           ['link'=>"dashboard-analytics",'name'=>"Pages"],
@@ -162,7 +162,7 @@ class UsersController extends Controller
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $user = $this->services->update($request->all(), $id);
+            $user = $this->service->update($request->all(), $id);
 
             $response = [
                 'message' => 'Users updated.',
@@ -199,7 +199,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $deleted = $this->services->delete($id);
+        $deleted = $this->service->delete($id);
 
         if (request()->wantsJson()) {
 
@@ -210,5 +210,15 @@ class UsersController extends Controller
         }
 
         return redirect()->back()->with('message', 'Users deleted.');
+    }
+
+    public function updateUserModule(Request $request, $id)
+    {
+        return $this->service->updateUserModule($id);
+    }
+
+    public function updateUserModuleAction(Request $request, $id)
+    {
+        return $this->service->updateUserModuleAction($id);
     }
 }

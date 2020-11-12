@@ -85,7 +85,7 @@
                   <td>
                     <div class="custom-control custom-checkbox">
                       <input type="checkbox" id="{{ 'permission'.$action['id'] }}"
-                        class="custom-control-input permission" checked="{{ !!$action['auth'] }}">
+                        class="custom-control-input permission" checked="{{ !!$action['auth'] }}" disabled>
                       <label class="custom-control-label" for="users-checkbox1"></label>
                     </div>
                   </td>
