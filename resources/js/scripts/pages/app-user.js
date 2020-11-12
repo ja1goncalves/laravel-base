@@ -18,14 +18,17 @@ $(document).ready(function () {
   //  Rendering badge in status column
   var customBadgeHTML = function (params) {
     var color = "";
-    if (params.value == "active") {
+    if (params.value == "Ativo") {
       color = "success"
       return "<div class='badge badge-pill badge-light-" + color + "' >" + params.value + "</div>"
-    } else if (params.value == "blocked") {
+    } else if (params.value == "Bloqueado") {
       color = "danger";
       return "<div class='badge badge-pill badge-light-" + color + "' >" + params.value + "</div>"
-    } else if (params.value == "deactivated") {
+    } else if (params.value == "Inativo") {
       color = "warning";
+      return "<div class='badge badge-pill badge-light-" + color + "' >" + params.value + "</div>"
+    } else {
+      color = "primary";
       return "<div class='badge badge-pill badge-light-" + color + "' >" + params.value + "</div>"
     }
   }
@@ -45,7 +48,8 @@ $(document).ready(function () {
   // Renering Icons in Actions column
   var customIconsHTML = function (params) {
     var usersIcons = document.createElement("span");
-    var editIconHTML = "<a href='app-user-edit'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
+    var editIconHTML = "<a href='user/edit'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
+    var viewIconHTML = "<a href='users/view'><i class='users-edit-icon feather icon-eye mr-50'></i></a>"
     var deleteIconHTML = document.createElement('i');
     var attr = document.createAttribute("class")
     attr.value = "users-delete-icon feather icon-trash-2"
@@ -61,6 +65,7 @@ $(document).ready(function () {
       });
     });
     usersIcons.appendChild($.parseHTML(editIconHTML)[0]);
+    usersIcons.appendChild($.parseHTML(viewIconHTML)[0]);
     usersIcons.appendChild(deleteIconHTML);
     return usersIcons
   }
@@ -83,11 +88,10 @@ $(document).ready(function () {
       headerCheckboxSelection: true,
     },
     {
-      headerName: 'Username',
-      field: 'username',
+      headerName: 'Name',
+      field: 'name',
       filter: true,
       width: 175,
-      cellRenderer: customAvatarHTML,
     },
     {
       headerName: 'Email',
@@ -100,12 +104,6 @@ $(document).ready(function () {
       field: 'name',
       filter: true,
       width: 200,
-    },
-    {
-      headerName: 'Country',
-      field: 'country',
-      filter: true,
-      width: 150,
     },
     {
       headerName: 'Role',
@@ -122,22 +120,6 @@ $(document).ready(function () {
       cellStyle: {
         "text-align": "center"
       }
-    },
-    {
-      headerName: 'Verified',
-      field: 'is_verified',
-      filter: true,
-      width: 125,
-      cellRenderer: customBulletHTML,
-      cellStyle: {
-        "text-align": "center"
-      }
-    },
-    {
-      headerName: 'Department',
-      field: 'department',
-      filter: true,
-      width: 150,
     },
     {
       headerName: 'Actions',
@@ -169,13 +151,17 @@ $(document).ready(function () {
     var gridTable = document.getElementById("myGrid");
 
     /*** GET TABLE DATA FROM URL ***/
-    agGrid
-      .simpleHttpRequest({
-        url: "data/users-list.json"
-      })
-      .then(function (data) {
-        gridOptions.api.setRowData(data);
-      });
+    $.ajax({
+      dataType: 'json',
+      url: location.origin+"/users",
+      success: function (res) {
+        gridOptions.api.setRowData(res.data);
+      },
+      error: function (res) {
+        toastr.error(res.message)
+        gridOptions.api.setRowData([]);
+      }
+    })
 
     /*** FILTER TABLE ***/
     function updateSearchQuery(val) {

@@ -4,8 +4,8 @@
 namespace App\Services;
 
 
-use App\Presenters\UserPresenter;
-use App\Repositories\UserRepository;
+use App\Presenters\UsersPresenter;
+use App\Repositories\UsersRepository;
 use App\Repositories\UsersModulesActionsRepository;
 use App\Repositories\UsersModulesRepository;
 use App\Services\Traits\CrudMethods;
@@ -15,7 +15,7 @@ class UsersService extends AppService
     use CrudMethods;
 
     /**
-     * @var UserRepository
+     * @var UsersRepository
      */
     protected $repository;
 
@@ -26,14 +26,14 @@ class UsersService extends AppService
 
     protected $actionsRepository;
 
-    public function __construct(UserRepository $repository,
+    public function __construct(UsersRepository $repository,
                                 UsersModulesRepository $usersModulesRepository,
                                 UsersModulesActionsRepository $actionsRepository)
     {
         $this->repository = $repository;
         $this->usersModulesRepository = $usersModulesRepository;
         $this->actionsRepository = $actionsRepository;
-        $this->repository->setPresenter(UserPresenter::class);
+        $this->repository->setPresenter(UsersPresenter::class);
     }
 
     /**

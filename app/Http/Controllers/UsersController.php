@@ -9,7 +9,7 @@ use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\UsersCreateRequest;
 use App\Http\Requests\UsersUpdateRequest;
-use App\Repositories\UsersRepository;
+use App\Services\UsersService;
 use App\Validators\UsersValidator;
 
 /**
@@ -20,9 +20,9 @@ use App\Validators\UsersValidator;
 class UsersController extends Controller
 {
     /**
-     * @var UsersRepository
+     * @var UsersService
      */
-    protected $repository;
+    protected $services;
 
     /**
      * @var UsersValidator
@@ -32,33 +32,34 @@ class UsersController extends Controller
     /**
      * UsersController constructor.
      *
-     * @param UsersRepository $repository
+     * @param UsersService $services
      * @param UsersValidator $validator
      */
-    public function __construct(UsersRepository $repository, UsersValidator $validator)
+    public function __construct(UsersService $services, UsersValidator $validator)
     {
-        $this->repository = $repository;
+        $this->services = $services;
         $this->validator  = $validator;
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $users = $this->repository->all();
+        $users = $this->services->all()['data'];
+        $breadcrumbs = [
+          ['link'=>"dashboard-analytics",'name'=>"Home"],
+          ['link'=>"dashboard-analytics",'name'=>"Pages"],
+          ['name'=>"User List"]
+        ];
 
         if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $users,
-            ]);
+            return response()->json(['data' => $users]);
         }
 
-        return view('users.index', compact('users'));
+        return view('/pages/users/index', compact('users', 'breadcrumbs'));
     }
 
     /**

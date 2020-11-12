@@ -19,54 +19,20 @@
     },
     {
       "url": "",
-      "name": "User",
-      "icon": "feather icon-unlock",
-      "submenu": [
-        {
-          "url": "app-user-list",
-          "name": "List",
-          "icon": "feather icon-circle",
-          "i18n": "nav.app_user_list"
-        },
-        {
-          "url": "app-user-view",
-          "name": "View",
-          "icon": "feather icon-circle",
-          "i18n": "nav.app_user_view"
-        },
-        {
-          "url": "app-user-edit",
-          "name": "Edit",
-          "icon": "feather icon-circle",
-          "i18n": "nav.app_user_edit"
-        }
-      ]
-    },
-    {
-      "url": "",
       "navheader": "Configurações",
       "icon": ""
     },
     {
-      "url": "",
-      "name": "Data List",
-      "badge": "New",
-      "badgeClass": "badge badge-primary badge-pill float-right mr-2",
-      "icon": "feather icon-list",
-      "submenu": [
-        {
-          "url": "data-list-view",
-          "name": "List View",
-          "icon": "feather icon-circle",
-          "i18n": "nav.data_list_view"
-        },
-        {
-          "url": "data-thumb-view",
-          "name": "Thumb View",
-          "icon": "feather icon-circle",
-          "i18n": "nav.data_thumb_view"
-        }
-      ]
+      "url": "users",
+      "name": "Users",
+      "icon": "feather icon-user",
+      "i18n": "nav.app_user_list"
+    },
+    {
+      "url": "modules",
+      "name": "Modules",
+      "icon": "feather icon-grid",
+      "i18n": "nav.app_modules_list"
     }
   ]
 }

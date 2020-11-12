@@ -41,14 +41,11 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   Route::get('/app-calender', 'CalenderAppController@calenderApp')->name('calendar.index');
 
   // Users Pages
+  Route::get('/users', 'UsersController@index')->name('user.index');
   Route::get('/app-user-list', 'UserPagesController@user_list')->name('user.index');
   Route::get('/app-user-view', 'UserPagesController@user_view')->name('user.show');
   Route::get('/app-user-edit', 'UserPagesController@user_edit')->name('user.update');
   Route::get('/user-register', 'AuthenticationController@register')->name('user.store');
-
-  // Route Data List
-  Route::resource('/data-list-view','DataListController')->names('datalist');
-  Route::resource('/data-thumb-view', 'DataThumbController')->names('datathumb');
 
   // access controller
   Route::get('/access-control', 'AccessController@index')->name('access.index');
