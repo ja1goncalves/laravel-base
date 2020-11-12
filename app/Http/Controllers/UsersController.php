@@ -107,20 +107,24 @@ class UsersController extends Controller
      *
      * @param  int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(int $id)
     {
-        $user = $this->repository->find($id);
+        $user = $this->services->find($id)['data'];
+        $breadcrumbs = [
+          ['link'=>"dashboard-analytics",'name'=>"Home"],
+          ['link'=>"dashboard-analytics",'name'=>"Pages"],
+          ['name'=>"User View"]
+        ];
 
         if (request()->wantsJson()) {
-
             return response()->json([
                 'data' => $user,
             ]);
         }
 
-        return view('users.show', compact('user'));
+        return view('/pages/users/show', compact('user', 'breadcrumbs'));
     }
 
     /**
@@ -128,13 +132,18 @@ class UsersController extends Controller
      *
      * @param  int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(int $id)
     {
-        $user = $this->repository->find($id);
+        $user = $this->services->find($id);
+        $breadcrumbs = [
+          ['link'=>"dashboard-analytics",'name'=>"Home"],
+          ['link'=>"dashboard-analytics",'name'=>"Pages"],
+          ['name'=>"User Edit"]
+        ];
 
-        return view('users.edit', compact('user'));
+        return view('/pages/users/edit', compact('user','breadcrumbs'));
     }
 
     /**
@@ -153,7 +162,7 @@ class UsersController extends Controller
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $user = $this->repository->update($request->all(), $id);
+            $user = $this->services->update($request->all(), $id);
 
             $response = [
                 'message' => 'Users updated.',
@@ -190,7 +199,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $deleted = $this->repository->delete($id);
+        $deleted = $this->services->delete($id);
 
         if (request()->wantsJson()) {
 

@@ -12,107 +12,14 @@
   <component name="ChangeListManager">
     <list default="true" id="21872860-cade-4214-bdb4-2f71334a3b0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataListController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataThumbController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entities/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entities/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserPagesController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/UsersService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UsersService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/json/verticalMenu.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/json/verticalMenu.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/locale.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/locale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/pt/locale.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pt/locale.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-chat-sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-chat.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-ecommerce-checkout.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-ecommerce-details.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-ecommerce-shop.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-ecommerce-sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-ecommerce-wishlist.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-email-sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-file-manager-sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-file-manager.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-todo-sidebar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-todo.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/card-actions.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/card-advance.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/card-analytics.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/card-basic.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/card-statistics.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/chart-apex.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/chart-chartjs.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/chart-echarts.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/colors.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-alert.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-badges.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-breadcrumbs.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-buttons.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-carousel.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-collapse.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-dropdowns.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-list-group.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-media-objects.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-modals.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-navbar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-navs.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-pagination.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-pill-badges.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-pills.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-popovers.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-progress.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-spinner.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-tabs.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-toast.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/component-tooltips.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-grid.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-helper-classes.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-layout.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-syntax-highlighter.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-text-utilities.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/content-typography.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/data-list-view.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/data-thumb-view.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ex-component-avatar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ex-component-chips.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ex-component-divider.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-clipboard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-context-menu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-drag-drop.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-file-uploader.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-i18n.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-noui-slider.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-plyr.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-quill-editor.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-sweet-alerts.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-swiper.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-toastr.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/ext-component-tour.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-checkbox.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-date-time-picker.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-input-groups.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-input.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-layout.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-number-input.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-radio.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-select.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-switch.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-textarea.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-validation.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form-wizard.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/icons-feather.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/icons-font-awesome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/maps-google.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-account-settings.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-coming-soon.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-faq.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-invoice.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-kb-category.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-kb-question.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-knowledge-base.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-maintenance.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-not-authorized.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-search.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/page-user-profile.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panels/breadcrumb.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/breadcrumb.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-user-edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-user-list.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-user-view.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -309,7 +216,7 @@
       <workItem from="1604928396592" duration="3871000" />
       <workItem from="1605017348122" duration="11000" />
       <workItem from="1605020963372" duration="294000" />
-      <workItem from="1605206991228" duration="7222000" />
+      <workItem from="1605206991228" duration="11755000" />
     </task>
     <servers />
   </component>
@@ -369,9 +276,9 @@
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
     <state x="1907" y="166" width="1234" height="725" key="find.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604543749111" />
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1605213474229">
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1605221271807">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1605213474229" />
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1605221271807" />
   </component>
 </project>

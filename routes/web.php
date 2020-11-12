@@ -42,10 +42,9 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
 
   // Users Pages
   Route::get('/users', 'UsersController@index')->name('user.index');
-  Route::get('/app-user-list', 'UserPagesController@user_list')->name('user.index');
-  Route::get('/app-user-view', 'UserPagesController@user_view')->name('user.show');
-  Route::get('/app-user-edit', 'UserPagesController@user_edit')->name('user.update');
-  Route::get('/user-register', 'AuthenticationController@register')->name('user.store');
+  Route::get('/users/view/{id}', 'UsersController@show')->name('user.show');
+  Route::get('/users/edit/{id}', 'UsersController@edit')->name('user.update');
+  Route::get('/users/add', 'AuthenticationController@register')->name('user.store');
 
   // access controller
   Route::get('/access-control', 'AccessController@index')->name('access.index');

@@ -47,6 +47,11 @@ class Users extends Authenticatable implements Transformable
         'email_verified_at' => 'datetime',
     ];
 
+    public function modules()
+    {
+        return $this->belongsToMany(Modules::class, 'users_modules', 'user_id', 'module_id');
+    }
+
     public static function boot()
     {
         parent::boot();

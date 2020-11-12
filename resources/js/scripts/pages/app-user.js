@@ -48,8 +48,8 @@ $(document).ready(function () {
   // Renering Icons in Actions column
   var customIconsHTML = function (params) {
     var usersIcons = document.createElement("span");
-    var editIconHTML = "<a href='user/edit'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
-    var viewIconHTML = "<a href='users/view'><i class='users-edit-icon feather icon-eye mr-50'></i></a>"
+    var editIconHTML = "<a href='users/edit/"+params.data.id+"'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
+    var viewIconHTML = "<a href='users/view/"+params.data.id+"'><i class='users-edit-icon feather icon-eye mr-50'></i></a>"
     var deleteIconHTML = document.createElement('i');
     var attr = document.createAttribute("class")
     attr.value = "users-delete-icon feather icon-trash-2"
@@ -91,19 +91,13 @@ $(document).ready(function () {
       headerName: 'Name',
       field: 'name',
       filter: true,
-      width: 175,
+      width: 200,
     },
     {
       headerName: 'Email',
       field: 'email',
       filter: true,
       width: 225,
-    },
-    {
-      headerName: 'Name',
-      field: 'name',
-      filter: true,
-      width: 200,
     },
     {
       headerName: 'Role',
