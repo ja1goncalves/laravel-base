@@ -24,7 +24,10 @@ class ModulesUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'name' => 'sometimes|string|max:100',
+          'icon' => 'sometimes|string|max:100',
+          'route' => 'sometimes|string|max:100',
+          'status' => 'sometimes|boolean'
         ];
     }
 }

@@ -20,7 +20,7 @@
   <!-- users filter start -->
   <div class="card">
     <div class="card-header">
-      <h4 class="card-title">Filters</h4>
+      <h4 class="card-title">Filtros</h4>
       <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
       <div class="heading-elements">
         <ul class="list-inline mb-0">
@@ -36,7 +36,7 @@
           <form>
             <div class="row">
               <div class="col-12 col-sm-6 col-lg-3">
-                <label for="users-list-role">Role</label>
+                <label for="users-list-role">Papel</label>
                 <fieldset class="form-group">
                   <select class="form-control" id="users-list-role">
                     <option value="">All</option>
@@ -57,7 +57,7 @@
                 </fieldset>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <label for="users-list-verified">Verified</label>
+                <label for="users-list-verified">Verificado</label>
                 <fieldset class="form-group" disabled>
                   <select class="form-control" id="users-list-verified">
                     <option value="">All</option>
@@ -67,7 +67,7 @@
                 </fieldset>
               </div>
               <div class="col-12 col-sm-6 col-lg-3">
-                <label for="users-list-department">Department</label>
+                <label for="users-list-department">Departamento</label>
                 <fieldset class="form-group" disabled>
                   <select class="form-control" id="users-list-department">
                     <option value="">All</option>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="ag-btns d-flex flex-wrap">
                   <input type="text" class="ag-grid-filter form-control w-50 mr-1 mb-1 mb-sm-0" id="filter-text-box"
-                    placeholder="Search...." />
+                    placeholder="Pesquisar...." />
                   <div class="action-btns">
                     <div class="btn-dropdown ">
                       <div class="btn-group dropdown actions-dropodown">

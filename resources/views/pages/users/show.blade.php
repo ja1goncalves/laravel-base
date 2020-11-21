@@ -15,7 +15,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <div class="card-title">Account</div>
+          <div class="card-title">Usuário</div>
           <div class="row">
             <div class="col-2 users-view-image">
               <img src="{{ asset('images/portrait/small/avatar-s-12.jpg') }}" class="w-100 rounded mb-2"
@@ -25,15 +25,15 @@
             <div class="col-sm-4 col-12">
               <table>
                 <tr>
-                  <td class="font-weight-bold">Name</td>
+                  <td class="font-weight-bold">Nome</td>
                   <td>{{ $user['name'] }}</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Email</td>
+                  <td class="font-weight-bold">E-mail</td>
                   <td>{{ $user['email'] }}</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Date</td>
+                  <td class="font-weight-bold">Criado em</td>
                   <td>{{ $user['created_at'] }}</td>
                 </tr>
               </table>
@@ -45,14 +45,14 @@
                   <td>{{ $user['status'] }}</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Role</td>
+                  <td class="font-weight-bold">Papel</td>
                   <td>{{ $user['role'] }}</td>
                 </tr>
               </table>
             </div>
             <div class="col-12">
-              <a href="users/edit/<?php $user['id'] ?>" class="btn btn-primary mr-1"><i class="feather icon-edit-1"></i> Edit</a>
-              <button class="btn btn-outline-danger"><i class="feather icon-trash-2"></i> Delete</button>
+              <a href="{{ url('/users/edit/'.$user['id']) }}" class="btn btn-primary mr-1"><i class="feather icon-edit-1"></i> Editar</a>
+              <button class="btn btn-outline-danger"><i class="feather icon-trash-2"></i> Deletar</button>
             </div>
           </div>
         </div>
@@ -64,17 +64,17 @@
       <div class="card">
         <div class="card-body">
           <div class="table-responsive">
-            <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i class="feather icon-lock mr-50 "></i>Permission
+            <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i class="feather icon-lock mr-50 "></i>Permissões
             </h6>
             <table class="table table-borderless">
               <thead>
                 <tr>
-                  <th>Module</th>
-                  <th>Index</th>
-                  <th>Read</th>
-                  <th>Write</th>
-                  <th>Create</th>
-                  <th>Delete</th>
+                  <th>Módulo</th>
+                  <th>Início</th>
+                  <th>Visualização</th>
+                  <th>Edição</th>
+                  <th>Criação</th>
+                  <th>Remoção</th>
                 </tr>
               </thead>
               <tbody>

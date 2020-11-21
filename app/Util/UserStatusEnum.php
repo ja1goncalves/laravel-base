@@ -11,7 +11,12 @@ final class UserStatusEnum
     private const BLOCKED = 2;
     private const SUSPENDED = 3;
 
-    private const NAMES = ['Inativo', 'Ativo', 'Bloqueado', 'Suspenso'];
+    const NAMES = ['Inativo', 'Ativo', 'Bloqueado', 'Suspenso'];
+
+    public static function status(): array
+    {
+      return self::NAMES;
+    }
 
     public static function getName(int $status): string
     {

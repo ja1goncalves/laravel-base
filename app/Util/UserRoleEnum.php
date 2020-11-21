@@ -4,6 +4,8 @@
 namespace App\Util;
 
 
+use phpDocumentor\Reflection\Types\Self_;
+
 final class UserRoleEnum
 {
     public const ADMIN = 'admin';
@@ -17,6 +19,11 @@ final class UserRoleEnum
         self::PUBLIC => 'Público',
         self::CLIENT => 'Cliente'
     ];
+
+    public static function roles(): array
+    {
+      return self::ROLES;
+    }
 
     public static function getUserRoles(string $role): string
     {

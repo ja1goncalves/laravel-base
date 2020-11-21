@@ -24,7 +24,10 @@ class ModulesCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+          'name'   => 'required|string|max:100|unique:modules,name,NULL,id,deleted_at,NULL',
+          'icon'   => 'required|string|max:100',
+          'route'   => 'required|string|max:100',
+          'status' => 'sometimes|boolean'
         ];
     }
 }

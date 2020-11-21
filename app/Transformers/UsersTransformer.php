@@ -2,6 +2,7 @@
 
 namespace App\Transformers;
 
+use App\Util\UserRoleEnum;
 use App\Util\UserStatusEnum;
 use League\Fractal\TransformerAbstract;
 use App\Entities\Users;
@@ -27,7 +28,7 @@ class UsersTransformer extends TransformerAbstract
       'name'       => $model->name,
       'email'      => $model->email,
       'status'     => UserStatusEnum::getName($model->status),
-      'role'       => $model->role ?? 'public',
+      'role'       => UserRoleEnum::getUserRoles($model->role) ?? 'public',
       'modules'    => $model['modules'],
       /* place your other model properties here */
 

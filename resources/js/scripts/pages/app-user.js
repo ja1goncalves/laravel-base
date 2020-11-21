@@ -88,19 +88,19 @@ $(document).ready(function () {
       headerCheckboxSelection: true,
     },
     {
-      headerName: 'Name',
+      headerName: 'Nome',
       field: 'name',
       filter: true,
       width: 200,
     },
     {
-      headerName: 'Email',
+      headerName: 'E-mail',
       field: 'email',
       filter: true,
       width: 225,
     },
     {
-      headerName: 'Role',
+      headerName: 'Papel',
       field: 'role',
       filter: true,
       width: 150,
@@ -116,7 +116,7 @@ $(document).ready(function () {
       }
     },
     {
-      headerName: 'Actions',
+      headerName: 'Ações',
       field: 'transactions',
       width: 150,
       cellRenderer: customIconsHTML,
