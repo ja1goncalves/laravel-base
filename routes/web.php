@@ -40,15 +40,27 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   // Route Apps
   Route::get('/app-calender', 'CalenderAppController@calenderApp')->name('calendar.index');
 
-  // Users Pages
-  Route::get('/users', 'UsersController@index')->name('user.index');
-  Route::get('/users/view/{id}', 'UsersController@show')->name('user.show');
-  Route::get('/users/edit/{id}', 'UsersController@edit')->name('user.update');
-  Route::post('/users/edit/{id}', 'UsersController@update')->name('user.update');
-  Route::get('/users/add', 'UsersController@add')->name('user.store');
-  Route::post('/users/add', 'UsersController@store')->name('user.store');
-  Route::get('/users/permission/{id}', 'UsersController@updateUserModule')->name('users_modules.update');
-  Route::get('/users/permission-action/{id}', 'UsersController@updateUserModuleAction')->name('users_modules_actions.update');
+  Route::group(['prefix' => 'users'], function() {
+    Route::get('/', 'UsersController@index')->name('user.index');
+    Route::get('/view/{id}', 'UsersController@show')->name('user.show');
+    Route::get('/edit/{id}', 'UsersController@edit')->name('user.update');
+    Route::post('/edit/{id}', 'UsersController@update')->name('user.update');
+    Route::get('/add', 'UsersController@add')->name('user.store');
+    Route::post('/add', 'UsersController@store')->name('user.store');
+    Route::delete('/del/{id}', 'UsersController@destroy')->name('user.delete');
+    Route::get('/permission/{id}', 'UsersController@updateUserModule')->name('users_modules.update');
+    Route::get('/permission-action/{id}', 'UsersController@updateUserModuleAction')->name('users_modules_actions.update');
+  });
+
+  Route::group(['prefix' => 'modules'], function() {
+    Route::get('/', 'UsersController@index')->name('modules.index');
+    Route::get('/view/{id}', 'UsersController@show')->name('modules.show');
+    Route::get('/edit/{id}', 'UsersController@edit')->name('modules.update');
+    Route::post('/edit/{id}', 'UsersController@update')->name('modules.update');
+    Route::get('/add', 'UsersController@add')->name('modules.store');
+    Route::post('/add', 'UsersController@store')->name('modules.store');
+    Route::delete('/del/{id}', 'UsersController@destroy')->name('modules.delete');
+  });
 
   // access controller
   Route::get('/access-control', 'AccessController@index')->name('access.index');

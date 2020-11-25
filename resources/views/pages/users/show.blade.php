@@ -22,6 +22,7 @@
                 alt="avatar">
               <!-- height="150" width="150" -->
             </div>
+            <p hidden type="text" id="user-id">{{$user['id']}}</p>
             <div class="col-sm-4 col-12">
               <table>
                 <tr>
@@ -52,7 +53,9 @@
             </div>
             <div class="col-12">
               <a href="{{ url('/users/edit/'.$user['id']) }}" class="btn btn-primary mr-1"><i class="feather icon-edit-1"></i> Editar</a>
-              <button class="btn btn-outline-danger"><i class="feather icon-trash-2"></i> Deletar</button>
+              @if(Auth::user()->role == 'admin')
+              <button class="btn btn-outline-danger" id="del-user"><i class="feather icon-trash-2"></i> Deletar</button>
+              @endif
             </div>
           </div>
         </div>

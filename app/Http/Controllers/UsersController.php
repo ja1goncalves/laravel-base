@@ -183,21 +183,16 @@ class UsersController extends Controller
      *
      * @param  int $id
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
         $deleted = $this->service->delete($id);
 
-        if (request()->wantsJson()) {
+        if (request()->wantsJson())
+            return response()->json(['message' => 'Users deleted.', 'deleted' => $deleted,]);
 
-            return response()->json([
-                'message' => 'Users deleted.',
-                'deleted' => $deleted,
-            ]);
-        }
-
-        return redirect()->back()->with('message', 'Users deleted.');
+        return redirect('/users');
     }
 
     public function updateUserModule(Request $request, $id)

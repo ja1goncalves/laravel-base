@@ -8,6 +8,26 @@
 ==========================================================================================*/
 $(document).ready(function () {
 
+  var bDel = document.getElementById('del-user')
+  if (bDel) {
+    document.getElementById('del-user').addEventListener("click", function () {
+      $.ajax({
+        dataType: 'json',
+        method: 'delete',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: location.origin+"/users/del/"+document.getElementById('user-id').innerText,
+        success: function (res) {
+          location.replace(location.origin+"/users/")
+        },
+        error: function (res) {
+          toastr.error(res.message)
+        }
+      })
+    });
+  }
+
   var isRtl;
   if ( $('html').attr('data-textdirection') == 'rtl' ) {
     isRtl = true;
@@ -56,13 +76,26 @@ $(document).ready(function () {
     deleteIconHTML.setAttributeNode(attr);
     // selected row delete functionality
     deleteIconHTML.addEventListener("click", function () {
-      deleteArr = [
-        params.data
-      ];
-      // var selectedData = gridOptions.api.getSelectedRows();
-      gridOptions.api.updateRowData({
-        remove: deleteArr
-      });
+      $.ajax({
+        dataType: 'json',
+        method: 'delete',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: location.origin+"/users/del/"+params.data.id,
+        success: function (res) {
+          deleteArr = [
+            params.data
+          ];
+          // var selectedData = gridOptions.api.getSelectedRows();
+          gridOptions.api.updateRowData({
+            remove: deleteArr
+          });
+        },
+        error: function (res) {
+          toastr.error(res.message)
+        }
+      })
     });
     usersIcons.appendChild($.parseHTML(editIconHTML)[0]);
     usersIcons.appendChild($.parseHTML(viewIconHTML)[0]);
