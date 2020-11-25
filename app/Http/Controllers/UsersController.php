@@ -7,8 +7,6 @@ use App\Util\UserStatusEnum;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\UsersCreateRequest;
 use App\Http\Requests\UsersUpdateRequest;
 use App\Services\UsersService;
@@ -65,42 +63,44 @@ class UsersController extends Controller
     }
 
     /**
+     * Show the form for add the specified resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function add()
+    {
+      $status = UserStatusEnum::status();
+      $roles = UserRoleEnum::roles();
+
+      $breadcrumbs = [
+        ['link'=>"dashboard-analytics",'name'=>"Início"],
+        ['link'=>"dashboard-analytics",'name'=>"Páginas"],
+        ['name'=>"Adicionar usuário"]
+      ];
+
+      return view('/pages/users/add', compact('status', 'roles', 'breadcrumbs'));
+    }
+    /**
      * Store a newly created resource in storage.
      *
      * @param  UsersCreateRequest $request
      *
-     * @return \Illuminate\Http\Response
-     *
-     * @throws \Prettus\Validator\Exceptions\ValidatorException
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(UsersCreateRequest $request)
     {
         try {
+            $user = $this->service->create($request->all())['data'];
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
+            if ($request->wantsJson())
+                return response()->json(['message' => 'Users created.', 'data' => $user]);
 
-            $user = $this->service->create($request->all());
+          return redirect("/users/edit/".$user['id'])->with('message', 'Usuário atualizado!');
+        } catch (\Exception $e) {
+            if ($request->wantsJson())
+                return response()->json(['error' => true, 'message' => $e->getMessage()]);
 
-            $response = [
-                'message' => 'Users created.',
-                'data'    => $user->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return redirect()->back()->withErrors($e->getMessage())->withInput();
         }
     }
 
@@ -168,12 +168,12 @@ class UsersController extends Controller
             }
 
           return redirect("/users/edit/$id")->with('message', 'Usuário atualizado!');
-        } catch (ValidatorException $e) {
+        } catch (\Exception $e) {
             if ($request->wantsJson()) {
-                return response()->json(['error' => true, 'message' => $e->getMessageBag()]);
+                return response()->json(['error' => true, 'message' => $e->getMessage()]);
             }
 
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return redirect()->back()->withErrors($e->getMessage())->withInput();
         }
     }
 

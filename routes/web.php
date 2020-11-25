@@ -45,7 +45,7 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   Route::get('/users/view/{id}', 'UsersController@show')->name('user.show');
   Route::get('/users/edit/{id}', 'UsersController@edit')->name('user.update');
   Route::post('/users/edit/{id}', 'UsersController@update')->name('user.update');
-  Route::get('/users/add', 'AuthenticationController@register')->name('user.store');
+  Route::get('/users/add', 'UsersController@add')->name('user.store');
   Route::post('/users/add', 'UsersController@store')->name('user.store');
   Route::get('/users/permission/{id}', 'UsersController@updateUserModule')->name('users_modules.update');
   Route::get('/users/permission-action/{id}', 'UsersController@updateUserModuleAction')->name('users_modules_actions.update');

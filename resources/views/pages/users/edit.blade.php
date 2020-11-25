@@ -61,9 +61,17 @@
                         required data-validation-required-message="This email field is required">
                     </div>
                   </div>
+                  @if(Auth::user()->role == 'admin')
+                  <div class="form-group">
+                    <div class="controls">
+                      <label>Senha</label>
+                      <input name="password" id="password" type="password" class="form-control" placeholder="Senha" value=""
+                             data-validation-required-message="This password field is required">
+                    </div>
+                  </div>
+                  @endif
                 </div>
                 <div class="col-12 col-sm-6">
-
                   <div class="form-group">
                     <label>Status</label>
                     <select class="form-control" name="status" id="status">
@@ -80,6 +88,15 @@
                       @endforeach
                     </select>
                   </div>
+                  @if(Auth::user()->role == 'admin')
+                    <div class="form-group">
+                      <div class="controls">
+                        <label>Confimar senha</label>
+                        <input name="password_confirmation" id="password_confirmation" type="password" class="form-control" placeholder="Confirmação de Senha"
+                               value="" data-validation-required-message="This password field is required">
+                      </div>
+                    </div>
+                  @endif
                 </div>
                 <div class="col-12">
                   <div class="table-responsive border rounded px-1 ">

@@ -13,18 +13,7 @@
     <list default="true" id="21872860-cade-4214-bdb4-2f71334a3b0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ModulesCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ModulesCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ModulesUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ModulesUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UsersCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UsersCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UsersUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UsersUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/UsersTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/UsersTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Util/UserRoleEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Util/UserRoleEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Util/UserStatusEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Util/UserStatusEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panels/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panels/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +165,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../casaoficio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -228,7 +217,12 @@
       <workItem from="1605562502426" duration="1227000" />
       <workItem from="1605629541659" duration="599000" />
       <workItem from="1605698029478" duration="615000" />
-      <workItem from="1605895111980" duration="11881000" />
+      <workItem from="1605895111980" duration="11965000" />
+      <workItem from="1605916930741" duration="25000" />
+      <workItem from="1606149896473" duration="814000" />
+      <workItem from="1606329315811" duration="2901000" />
+      <workItem from="1606339072255" duration="781000" />
+      <workItem from="1606339865016" duration="814000" />
     </task>
     <servers />
   </component>
@@ -260,10 +254,10 @@
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
     <state x="2405" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1604515501456" />
-    <state x="2455" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605730979869">
+    <state x="2455" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1606339069170">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
-    <state x="2455" y="311" width="424" height="491" key="FileChooserDialogImpl/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1605730979869" />
+    <state x="2455" y="311" width="424" height="491" key="FileChooserDialogImpl/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1606339069170" />
     <state width="2462" height="275" key="GridCell.Tab.0.bottom" timestamp="1604105707694">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
