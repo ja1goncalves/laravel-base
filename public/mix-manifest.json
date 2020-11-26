@@ -134,6 +134,7 @@
     "/js/scripts/pages/app-ecommerce-shop.js": "/js/scripts/pages/app-ecommerce-shop.js",
     "/js/scripts/pages/app-email.js": "/js/scripts/pages/app-email.js",
     "/js/scripts/pages/app-file-manager.js": "/js/scripts/pages/app-file-manager.js",
+    "/js/scripts/pages/app-module.js": "/js/scripts/pages/app-module.js",
     "/js/scripts/pages/app-todo.js": "/js/scripts/pages/app-todo.js",
     "/js/scripts/pages/app-user.js": "/js/scripts/pages/app-user.js",
     "/js/scripts/pages/bootstrap-toast.js": "/js/scripts/pages/bootstrap-toast.js",

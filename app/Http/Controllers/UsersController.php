@@ -151,13 +151,13 @@ class UsersController extends Controller
         return view('/pages/users/edit', compact('user', 'status', 'roles', 'breadcrumbs'));
     }
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param UsersUpdateRequest $request
-   * @param string $id
-   * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
-   */
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param UsersUpdateRequest $request
+     * @param string $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
     public function update(UsersUpdateRequest $request, string $id)
     {
         try {

@@ -53,13 +53,13 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   });
 
   Route::group(['prefix' => 'modules'], function() {
-    Route::get('/', 'UsersController@index')->name('modules.index');
-    Route::get('/view/{id}', 'UsersController@show')->name('modules.show');
-    Route::get('/edit/{id}', 'UsersController@edit')->name('modules.update');
-    Route::post('/edit/{id}', 'UsersController@update')->name('modules.update');
-    Route::get('/add', 'UsersController@add')->name('modules.store');
-    Route::post('/add', 'UsersController@store')->name('modules.store');
-    Route::delete('/del/{id}', 'UsersController@destroy')->name('modules.delete');
+    Route::get('/', 'ModulesController@index')->name('modules.index');
+    Route::get('/view/{id}', 'ModulesController@show')->name('modules.show');
+    Route::get('/edit/{id}', 'ModulesController@edit')->name('modules.update');
+    Route::post('/edit/{id}', 'ModulesController@update')->name('modules.update');
+    Route::get('/add', 'ModulesController@add')->name('modules.store');
+    Route::post('/add', 'ModulesController@store')->name('modules.store');
+    Route::delete('/del/{id}', 'ModulesController@destroy')->name('modules.delete');
   });
 
   // access controller
