@@ -38,7 +38,7 @@
                 <div class="ag-btns d-flex flex-wrap">
                   <input type="text" class="ag-grid-filter form-control w-50 mr-1 mb-1 mb-sm-0" id="filter-text-box"
                     placeholder="Pesquisar...." />
-                  <div class="action-btns">
+                  <div class="action-btns" {{ Auth::user()->role == 'admin' ? '' : 'hidden' }}>
                     <div class="btn-dropdown ">
                       <div class="btn-group dropdown actions-dropodown">
                         <a type="button" class="btn btn-white px-2 py-75 waves-effect waves-light"

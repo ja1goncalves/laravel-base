@@ -7,7 +7,6 @@
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 $(document).ready(function () {
-
   var bDel = document.getElementById('del-user')
   if (bDel) {
     document.getElementById('del-user').addEventListener("click", function () {
@@ -295,3 +294,37 @@ $(document).ready(function () {
     $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
   }
 });
+
+function permissionModule (id) {
+  $.ajax({
+    dataType: 'json',
+    method: 'get',
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: location.origin + "/users/permission/" + id,
+    success: function (res) {
+      toastr.error('Permissão atualizada')
+    },
+    error: function (res) {
+      toastr.error(res.message)
+    }
+  })
+}
+
+function permissionAction (id) {
+  $.ajax({
+    dataType: 'json',
+    method: 'get',
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: location.origin + "/users/permission-action/" + id,
+    success: function (res) {
+      toastr.error('Permissão atualizada')
+    },
+    error: function (res) {
+      toastr.error(res.message)
+    }
+  })
+}

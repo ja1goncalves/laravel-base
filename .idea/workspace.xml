@@ -12,12 +12,10 @@
   <component name="ChangeListManager">
     <list default="true" id="21872860-cade-4214-bdb4-2f71334a3b0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ModulesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ModulesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ModulesCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ModulesCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ModulesUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ModulesUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/app-user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/modules/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/modules/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/users/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +226,7 @@
       <workItem from="1606339865016" duration="3742000" />
       <workItem from="1606408692890" duration="3221000" />
       <workItem from="1606416269724" duration="4569000" />
-      <workItem from="1606420846310" duration="1710000" />
+      <workItem from="1606420846310" duration="5340000" />
     </task>
     <servers />
   </component>
@@ -292,9 +290,9 @@
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
     <state x="1907" y="166" width="1234" height="725" key="find.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1606419198020" />
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606341339019">
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606424688999">
       <screen x="1366" y="0" width="2560" height="1080" />
     </state>
-    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1606341339019" />
+    <state x="2335" y="259" width="672" height="678" key="search.everywhere.popup/1366.0.2560.1080/0.27.1366.741@1366.0.2560.1080" timestamp="1606424688999" />
   </component>
 </project>

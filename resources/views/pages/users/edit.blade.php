@@ -99,103 +99,51 @@
                   @endif
                 </div>
                 <div class="col-12">
-                  <div class="table-responsive border rounded px-1 ">
-                    <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i
-                        class="feather icon-lock mr-50 "></i>Permission</h6>
-                    <table class="table table-borderless">
-                      <thead>
-                        <tr>
-                          <th>Module</th>
-                          <th>Read</th>
-                          <th>Write</th>
-                          <th>Create</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Users</td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox1"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox1"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox2"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox2"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox3"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox3"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox4"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox4"></label>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Articles</td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox5"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox5"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox6"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox6"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox7"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox7"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox8"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox8"></label>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Staff</td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox9"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox9"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox10"
-                                class="custom-control-input" checked>
-                              <label class="custom-control-label" for="users-checkbox10"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox11"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox11"></label>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="custom-control custom-checkbox"><input type="checkbox" id="users-checkbox12"
-                                class="custom-control-input"><label class="custom-control-label"
-                                for="users-checkbox12"></label>
-                            </div>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i class="feather icon-lock mr-50 "></i>Permissões
+                        </h6>
+                        <table class="table table-borderless">
+                          <thead>
+                          <tr>
+                            <th></th>
+                            <th>Módulo</th>
+                            <th>Início</th>
+                            <th>Visualização</th>
+                            <th>Edição</th>
+                            <th>Criação</th>
+                            <th>Remoção</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          @foreach($user['modules'] as $module)
+                            <tr>
+                              <td>
+                                <div class="custom-control custom-checkbox">
+                                  <input type="checkbox" id="{{ $module['user_module']['id'] }}" {{ Auth::user()->role == 'admin' ? '' : 'disabled' }}
+                                         class="custom-control-input permission-module" {{ $module['user_module']['auth'] ? 'checked' : '' }}
+                                         onchange="permissionModule({{$module['user_module']['id']}})">
+                                  <label class="custom-control-label" for="{{ $module['user_module']['id'] }}"></label>
+                                </div>
+                              </td>
+                              <td>{{ $module['name'] }}</td>
+                              @foreach($module['user_module']['actions'] as $action)
+                                <td>
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="{{ $action['id'] }}" {{ Auth::user()->role == 'admin' ? '' : 'disabled' }}
+                                           class="custom-control-input permission" {{ $action['auth'] ? 'checked' : '' }}
+                                           onchange="permissionAction({{ $action['id'] }})">
+                                    <label class="custom-control-label" for="{{ $action['id'] }}"></label>
+                                  </div>
+                                </td>
+                              @endforeach
+                            </tr>
+                          @endforeach
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">

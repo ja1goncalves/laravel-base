@@ -72,6 +72,7 @@
             <table class="table table-borderless">
               <thead>
                 <tr>
+                  <th></th>
                   <th>Módulo</th>
                   <th>Início</th>
                   <th>Visualização</th>
@@ -83,12 +84,19 @@
               <tbody>
               @foreach($user['modules'] as $module)
                 <tr>
-                  <td>{{ $module['name'] }}</td>
-                  @foreach($module['user_module'] as $action)
                   <td>
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" id="{{ 'permission'.$action['id'] }}"
-                        class="custom-control-input permission" checked="{{ !!$action['auth'] }}" disabled>
+                      <input type="checkbox" id="{{ 'permission-'.$module['user_module']['id'] }}"
+                             class="custom-control-input permission" {{ $module['user_module']['auth'] ? 'checked' : '' }} disabled>
+                      <label class="custom-control-label" for="users-checkbox1"></label>
+                    </div>
+                  </td>
+                  <td>{{ $module['name'] }}</td>
+                  @foreach($module['user_module']['actions'] as $action)
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" id="{{ 'permission-'.$action['id'] }}"
+                        class="custom-control-input permission" {{ $action['auth'] ? 'checked' : '' }} disabled>
                       <label class="custom-control-label" for="users-checkbox1"></label>
                     </div>
                   </td>
