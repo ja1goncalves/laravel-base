@@ -65,8 +65,7 @@
                   <div class="form-group">
                     <div class="controls">
                       <label>Senha</label>
-                      <input name="password" id="password" type="password" class="form-control" placeholder="Senha" value=""
-                             data-validation-required-message="This password field is required">
+                      <input name="password" id="password" type="password" class="form-control" placeholder="Senha" value="">
                     </div>
                   </div>
                   @endif
@@ -93,7 +92,7 @@
                       <div class="controls">
                         <label>Confimar senha</label>
                         <input name="password_confirmation" id="password_confirmation" type="password" class="form-control" placeholder="Confirmação de Senha"
-                               value="" data-validation-required-message="This password field is required">
+                               value="">
                       </div>
                     </div>
                   @endif

@@ -144,5 +144,6 @@ return [
     "I18n"=>"I18n",
     "Access Control"=>"Controle de acesso",
     "File Manager" => "Gerenciador de arquivos",
-    "Pricing" => "Preços"
+    "Pricing" => "Preços",
+    "Check"=>"Bater Ponto"
 ];

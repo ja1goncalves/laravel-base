@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics')->name('dashboard.index');
 
   // Route Apps
-  Route::get('/app-calender', 'CalenderAppController@calenderApp')->name('calendar.index');
+  Route::get('/calender', 'CalenderAppController@calenderApp')->name('calendar.index');
 
   Route::group(['prefix' => 'users'], function() {
     Route::get('/', 'UsersController@index')->name('user.index');
@@ -60,6 +60,12 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
     Route::get('/add', 'ModulesController@add')->name('modules.store');
     Route::post('/add', 'ModulesController@store')->name('modules.store');
     Route::delete('/del/{id}', 'ModulesController@destroy')->name('modules.delete');
+  });
+
+  Route::group(['prefix' => 'checks'], function() {
+    Route::get('/', 'UsersChecksController@index')->name('checks.index');
+    Route::post('/end/{id}', 'UsersChecksController@update')->name('checks.update');
+    Route::post('/init', 'UsersChecksController@store')->name('checks.store');
   });
 
   // access controller

@@ -12,27 +12,38 @@
       "icon": ""
     },
     {
-      "url": "app-calender",
+      "url": "calender",
       "name": "Calender",
       "icon": "feather icon-calendar",
-      "i18n": "nav.app_calender"
+      "i18n": "nav.app_calender",
+      "role": "admin"
+    },
+    {
+      "url": "checks",
+      "name": "Check",
+      "icon": "feather icon-check",
+      "i18n": "nav.check",
+      "role": "editor"
     },
     {
       "url": "",
       "navheader": "Configurações",
-      "icon": ""
+      "icon": "",
+      "role": "admin"
     },
     {
       "url": "users",
       "name": "Users",
       "icon": "feather icon-user",
-      "i18n": "nav.app_user_list"
+      "i18n": "nav.app_user_list",
+      "role": "admin"
     },
     {
       "url": "modules",
       "name": "Modules",
       "icon": "feather icon-grid",
-      "i18n": "nav.app_modules_list"
+      "i18n": "nav.app_modules_list",
+      "role": "admin"
     }
   ]
 }

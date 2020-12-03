@@ -64,11 +64,15 @@ class Acl
     public function handle(\Illuminate\Http\Request $request, Closure $next)
     {
         if (!$this->checkPermissions()) {
+          if ($request->wantsJson()) {
             return response()->json([
-                'error' => true,
-                'message' => 'User is forbidden to continue access this route',
-                'data' => false
+              'error' => true,
+              'message' => 'User is forbidden to continue access this route',
+              'data' => false
             ], 403);
+          } else {
+            return redirect('/', 403);
+          }
         }
 
         return $next($request);
