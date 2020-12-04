@@ -42,6 +42,46 @@
               </div>
             </div>
           </div>
+          @foreach($checks['data'] as $check)
+          <div class="modal text-left" id="popup{{$check['id']}}" role="dialog" aria-labelledby="cal-modal" aria-modal="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title text-text-bold-600" id="cal-modal">Events</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                  <!-- modules edit account form start -->
+                  <form novalidate action="{{ url("checks/init") }}" enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="row">
+                      <div class="col-12 row">
+                        <div class="form-group col-5 ml-1">
+                          <div class="controls">
+                            <label>Entrada</label>
+                            <input name="start-fake" id="start-fake" type="text" value="{{$check['start']}}" disabled class="form-control" placeholder="Entrada">
+                          </div>
+                        </div>
+                        <div class="form-group col-5">
+                          <div class="controls">
+                            <label>Saída</label>
+                            <input name="end" id="end" type="text" class="form-control" placeholder="Saída" value="{{$check['end']}}" disabled>
+                          </div>
+                        </div>
+                        <div class="col-1 justify-content-end mt-2">
+                          <button type="submit" class="btn btn-warning outline mb-1 mb-sm-0 mr-0 mr-sm-1" disabled><i class="fa fa-check-circle"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- modules edit account form ends -->
+              </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
           <div id="myGrid" class="aggrid ag-theme-material"></div>
         </div>
       </div>

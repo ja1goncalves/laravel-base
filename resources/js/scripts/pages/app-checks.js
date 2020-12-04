@@ -18,7 +18,7 @@ $(document).ready(function () {
   // Renering Icons in Actions column
   var customIconsHTML = function (params) {
     var usersIcons = document.createElement("span");
-    var editIconHTML = "<a href='checks/edit/"+params.data.id+"'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
+    var editIconHTML = "<a href='#' data-toggle=\"modal\" data-target='#popup"+params.data.id+"'><i class='users-edit-icon feather icon-edit-1 mr-50'></i></a>"
     usersIcons.appendChild($.parseHTML(editIconHTML)[0]);
     return usersIcons
   }

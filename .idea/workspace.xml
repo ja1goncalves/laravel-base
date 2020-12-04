@@ -12,10 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="21872860-cade-4214-bdb4-2f71334a3b0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersChecksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersChecksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/UsersCheckService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/UsersCheckService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/scripts/extensions/fullcalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/extensions/fullcalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/app-calender.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/app-calender.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/app-checks.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/app-checks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/check/everyone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/check/everyone.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +232,7 @@
       <workItem from="1606929900844" duration="12631000" />
       <workItem from="1606984408565" duration="7957000" />
       <workItem from="1607031291217" duration="2797000" />
-      <workItem from="1607058088605" duration="18505000" />
+      <workItem from="1607058088605" duration="21378000" />
     </task>
     <servers />
   </component>
