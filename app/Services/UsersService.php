@@ -5,10 +5,13 @@ namespace App\Services;
 
 
 use App\Presenters\UsersPresenter;
+use App\Repositories\UsersCheckRepository;
 use App\Repositories\UsersRepository;
 use App\Repositories\UsersModulesActionsRepository;
 use App\Repositories\UsersModulesRepository;
 use App\Services\Traits\CrudMethods;
+use App\Util\Functions;
+use Carbon\Carbon;
 
 class UsersService extends AppService
 {
@@ -26,13 +29,17 @@ class UsersService extends AppService
 
     protected $actionsRepository;
 
+    protected $checkRepository;
+
     public function __construct(UsersRepository $repository,
                                 UsersModulesRepository $usersModulesRepository,
-                                UsersModulesActionsRepository $actionsRepository)
+                                UsersModulesActionsRepository $actionsRepository,
+                                UsersCheckRepository $checkRepository)
     {
         $this->repository = $repository;
         $this->usersModulesRepository = $usersModulesRepository;
         $this->actionsRepository = $actionsRepository;
+        $this->checkRepository = $checkRepository;
         $this->repository->setPresenter(UsersPresenter::class);
     }
 
@@ -44,8 +51,20 @@ class UsersService extends AppService
     public function find($id, $skipPresenter = false)
     {
         $user = $this->repository
-            ->with('modules')
+            ->with(['modules', 'checks'])
             ->find($id);
+
+        $checks = $this->checkRepository->findWhere([
+          'users_id' => $id,
+          ['start', '>=', Carbon::now()->firstOfMonth()],
+          ['start', '<', Carbon::now()->lastOfMonth()]
+        ]);
+
+        $hours = (Carbon::now()->diff(Carbon::now()))->format('%h:%i:%s');
+
+        foreach ($checks as $check){
+          $hours = Functions::sumDatetime($hours, Functions::subtractDateTime($check['end'], $check['start']));
+        }
 
         $modules = $user['data']['modules']->toArray();
         foreach ($modules as $key => $module) {
@@ -55,7 +74,7 @@ class UsersService extends AppService
                 ->first()->toArray();
             $user['data']['modules'][$key]['user_module'] = $user_module;
         }
-        return $user;
+        return ['user' => $user, 'hours' => $hours, 'points' =>intdiv(strtotime($hours), 720000)];
     }
 
     public function updateUserModule($id)

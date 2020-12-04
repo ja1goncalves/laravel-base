@@ -113,7 +113,10 @@ class UsersController extends Controller
      */
     public function show(int $id)
     {
-        $user = $this->service->find($id)['data'];
+        $data = $this->service->find($id);
+        $user = $data['user']['data'];
+        $hours = $data['hours'];
+        $points = $data['points'];
         $breadcrumbs = [
           ['link'=>"dashboard-analytics",'name'=>"Início"],
           ['link'=>"dashboard-analytics",'name'=>"Páginas"],
@@ -126,7 +129,7 @@ class UsersController extends Controller
             ]);
         }
 
-        return view('/pages/users/show', compact('user', 'breadcrumbs'));
+        return view('/pages/users/show', compact('user', 'hours', 'points', 'breadcrumbs'));
     }
 
     /**

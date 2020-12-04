@@ -49,6 +49,10 @@
                   <td class="font-weight-bold">Papel</td>
                   <td>{{ $user['role'] }}</td>
                 </tr>
+                <tr>
+                  <td class="font-weight-bold">Horas e Pontos</td>
+                  <td>{{ $hours . ' - ' . $points }}</td>
+                </tr>
               </table>
             </div>
             <div class="col-12">
@@ -63,6 +67,38 @@
     </div>
     <!-- social links end -->
     <!-- permissions start -->
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <h6 class="border-bottom py-1 mx-1 mb-0 font-medium-2"><i class="feather icon-lock mr-50 "></i>Horários
+            </h6>
+            <table class="table table-borderless">
+              <thead>
+                <tr>
+                  <th>Dia</th>
+                  <th>Início</th>
+                  <th>Fim</th>
+                  <th>Horas</th>
+                  <th>Pontos</th>
+                </tr>
+              </thead>
+              <tbody>
+              @foreach($user['checks'] as $key => $check)
+                <tr>
+                  <td>{{ $key }}</td>
+                  <td>{{ $check['start'] }}</td>
+                  <td>{{ $check['end'] }}</td>
+                  <td>{{ $check['hours'] }}</td>
+                  <td>{{ intdiv(strtotime($check['hours']), 720000) }}</td>
+                </tr>
+              @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="col-12">
       <div class="card">
         <div class="card-body">

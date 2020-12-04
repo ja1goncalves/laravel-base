@@ -79,4 +79,15 @@ final class Functions
     {
         return preg_replace(self::SPECIAL_CHARACTERS, explode(" ","a A e E i I o O u U n N"), $str);
     }
+
+    public static function sumDatetime($first, $second)
+    {
+      $secs = strtotime($first) - strtotime("00:00:00");
+      return date("H:i:s",strtotime($second) + $secs);
+    }
+
+    public static function subtractDatetime($first, $second)
+    {
+      return $first->diff($second)->format('%h:%i:%s');
+    }
 }
