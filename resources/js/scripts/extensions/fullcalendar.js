@@ -33,26 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: ["dayGrid", "timeGrid", "interaction"],
-    customButtons: {
-      addNew: {
-        text: ' Add',
-        click: function () {
-          var calDate = new Date,
-            todaysDate = calDate.toISOString().slice(0, 10);
-          $(".modal-calendar").modal("show");
-          $(".modal-calendar .cal-submit-event").addClass("d-none");
-          $(".modal-calendar .remove-event").addClass("d-none");
-          $(".modal-calendar .cal-add-event").removeClass("d-none")
-          $(".modal-calendar .cancel-event").removeClass("d-none")
-          $(".modal-calendar .add-category .chip").remove();
-          $("#cal-start-date").val(todaysDate);
-          $("#cal-end-date").val(todaysDate);
-          $(".modal-calendar #cal-start-date").attr("disabled", false);
-        }
-      }
-    },
     header: {
-      left: "addNew",
       center: "dayGridMonth,timeGridWeek,timeGridDay",
       right: "prev,title,next"
     },
@@ -66,6 +47,29 @@ document.addEventListener('DOMContentLoaded', function () {
     dateClick: function (info) {
       $(".modal-calendar #cal-start-date").val(info.dateStr).attr("disabled", true);
       $(".modal-calendar #cal-end-date").val(info.dateStr);
+
+      const day = info.date.getDate()+"/"+(info.date.getMonth()+1)+"/"+info.date.getFullYear()
+      $("#cal-modal").text("Eventos do dia "+day)
+      $.ajax({
+        dataType: 'json',
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: location.origin+"/checks/everyone?at="+day,
+        success: function (res) {
+          $(".modal-body").html("")
+          if (res.data.data.length > 0) {
+            res.data.data.forEach(check => {
+              $(".modal-body").append("<p><strong>"+check.user.name+"</strong> chegou às <strong>"+check.start+"</strong> e saiu às <strong>"+check.end+"</strong></p>")
+            })
+          } else {
+            $(".modal-body").append("<p><strong>Nenhum</strong> evento aconteceu hoje</p>")
+          }
+        },
+        error: function (res) {
+          toastr.error(res.message)
+        }
+      })
     },
     // displays saved event values on click
     eventClick: function (info) {

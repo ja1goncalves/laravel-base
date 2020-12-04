@@ -49,12 +49,21 @@ class UsersCheckService extends AppService
       return ['completed' => $completed, 'uncompleted' => count($uncompleted) > 0 ? $uncompleted[0] : $uncompleted];
     }
     /**
-     * @param int $limit
+     * @param string $at
      * @return mixed
      */
-    public function everyone($limit = 20): array
+    public function everyone(string $at): array
     {
-      return $this->repository->with('user')->orderBy('created_at', 'desc')->all();
+      if (empty($at)) {
+        return $this->repository->with('user')->orderBy('created_at', 'desc')->all();
+      } else {
+        $at = Carbon::createFromFormat('Y-m-d', Functions::convertDateToUS($at, false, false))->addDays(-1);
+        return $this->repository
+          ->with('user')
+          ->orderBy('created_at', 'desc')
+          ->findWhereBetween('start', [$at->ceilDay()->format('Y-m-d H:i:s'), $at->ceilDay()->addDays()->format('Y-m-d H:i:s')]);
+      }
+
     }
 
     /**

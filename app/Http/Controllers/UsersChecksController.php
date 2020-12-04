@@ -57,14 +57,16 @@ class UsersChecksController extends Controller
 
     return view('/pages/check/index', compact('checks', 'breadcrumbs'));
   }
+
   /**
    * Display a listing of the resource.
    *
+   * @param Request $request
    * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
    */
-  public function everyone()
+  public function everyone(Request $request)
   {
-    $checks = $this->service->everyone();
+    $checks = $this->service->everyone($request->get('at', ''));
 
     $breadcrumbs = [
       ['link'=>"dashboard-analytics",'name'=>"Início"],
