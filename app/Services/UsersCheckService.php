@@ -48,6 +48,14 @@ class UsersCheckService extends AppService
 
       return ['completed' => $completed, 'uncompleted' => count($uncompleted) > 0 ? $uncompleted[0] : $uncompleted];
     }
+    /**
+     * @param int $limit
+     * @return mixed
+     */
+    public function everyone($limit = 20): array
+    {
+      return $this->repository->with('user')->orderBy('created_at', 'desc')->all();
+    }
 
     /**
      * @param array $data

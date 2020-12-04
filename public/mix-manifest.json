@@ -130,6 +130,7 @@
     "/js/scripts/pages/3-columns-left-sidebar.js": "/js/scripts/pages/3-columns-left-sidebar.js",
     "/js/scripts/pages/account-setting.js": "/js/scripts/pages/account-setting.js",
     "/js/scripts/pages/app-chat.js": "/js/scripts/pages/app-chat.js",
+    "/js/scripts/pages/app-checks.js": "/js/scripts/pages/app-checks.js",
     "/js/scripts/pages/app-ecommerce-details.js": "/js/scripts/pages/app-ecommerce-details.js",
     "/js/scripts/pages/app-ecommerce-shop.js": "/js/scripts/pages/app-ecommerce-shop.js",
     "/js/scripts/pages/app-email.js": "/js/scripts/pages/app-email.js",

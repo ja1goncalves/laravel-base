@@ -23,7 +23,7 @@ class UsersCheckTransformer extends TransformerAbstract
     {
         return [
           'id'         => (int) $model->id,
-//          'user'       => $model->getRelations()['user'] ? $model['user'] : [],
+          'user'       => $model['user'] ?? [],
           'start'      => $model->start->format('d/m/Y H:i:s'),
           'end'        => $model->end ? $model->end->format('d/m/Y H:i:s') : null,
           'created_at' => $model->created_at->format('d/m/Y'),

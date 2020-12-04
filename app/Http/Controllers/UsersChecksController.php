@@ -57,6 +57,25 @@ class UsersChecksController extends Controller
 
     return view('/pages/check/index', compact('checks', 'breadcrumbs'));
   }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+   */
+  public function everyone()
+  {
+    $checks = $this->service->everyone();
+
+    $breadcrumbs = [
+      ['link'=>"dashboard-analytics",'name'=>"Início"],
+      ['link'=>"dashboard-analytics",'name'=>"Páginas"],
+      ['name'=>"Checagem"]
+    ];
+
+    if (request()->wantsJson()) return response()->json(['data' => $checks]);
+
+    return view('/pages/check/everyone', compact('checks', 'breadcrumbs'));
+  }
 
   /**
    * Show the form for add the specified resource.

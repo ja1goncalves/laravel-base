@@ -19,6 +19,13 @@
       "role": "admin"
     },
     {
+      "url": "checks/everyone",
+      "name": "Check",
+      "icon": "feather icon-check",
+      "i18n": "nav.check",
+      "role": "admin"
+    },
+    {
       "url": "checks",
       "name": "Check",
       "icon": "feather icon-check",
