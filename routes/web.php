@@ -65,6 +65,7 @@ Route::group(['middleware' => ['auth', 'acl']], function() {
   Route::group(['prefix' => 'checks'], function() {
     Route::get('/', 'UsersChecksController@index')->name('checks.index');
     Route::get('/everyone', 'UsersChecksController@everyone')->name('checks.index');
+    Route::get('/calendar', 'UsersChecksController@calendar')->name('checks.index');
     Route::post('/end/{id}', 'UsersChecksController@update')->name('checks.update');
     Route::post('/init', 'UsersChecksController@store')->name('checks.store');
   });

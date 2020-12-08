@@ -48,10 +48,11 @@ class UsersCheckService extends AppService
 
       return ['completed' => $completed, 'uncompleted' => count($uncompleted) > 0 ? $uncompleted[0] : $uncompleted];
     }
-    /**
-     * @param string $at
-     * @return mixed
-     */
+
+  /**
+   * @param string $at
+   * @return mixed
+   */
     public function everyone(string $at): array
     {
       if (empty($at)) {
@@ -64,6 +65,25 @@ class UsersCheckService extends AppService
           ->findWhereBetween('start', [$at->ceilDay()->format('Y-m-d H:i:s'), $at->ceilDay()->addDays()->format('Y-m-d H:i:s')]);
       }
 
+    }
+
+    public function calendar(): array
+    {
+      $checks = $this->repository->skipPresenter(true)
+        ->with(['user' => function ($q) { return $q->select(['name', 'id']); }])
+        ->orderBy('created_at', 'desc')
+        ->all();
+      $days = [];
+
+      foreach ($checks as $check) {
+        $days[] = [
+          'user' => $check['user']['name'],
+          'start' => $check['start']->format('Y-m-d H:i:s'),
+          'end' => $check['end']->format('Y-m-d H:i:s')
+        ];
+      }
+
+      return $days;
     }
 
     /**

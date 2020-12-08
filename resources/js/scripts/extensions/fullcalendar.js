@@ -42,59 +42,40 @@ document.addEventListener('DOMContentLoaded', function () {
     editable: true,
     allDay: true,
     navLinkDayClick: function (date) {
+      const day = date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear()
+      getChecksByDay(day)
       $(".modal-calendar").modal("show");
     },
     dateClick: function (info) {
       $(".modal-calendar #cal-start-date").val(info.dateStr).attr("disabled", true);
       $(".modal-calendar #cal-end-date").val(info.dateStr);
-
       const day = info.date.getDate()+"/"+(info.date.getMonth()+1)+"/"+info.date.getFullYear()
-      $("#cal-modal").text("Eventos do dia "+day)
-      $.ajax({
-        dataType: 'json',
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        url: location.origin+"/checks/everyone?at="+day,
-        success: function (res) {
-          $(".modal-body").html("")
-          if (res.data.data.length > 0) {
-            res.data.data.forEach(check => {
-              $(".modal-body").append("<p><strong>"+check.user.name+"</strong> chegou às <strong>"+check.start+"</strong> e saiu às <strong>"+check.end+"</strong></p>")
-            })
-          } else {
-            $(".modal-body").append("<p><strong>Nenhum</strong> evento aconteceu hoje</p>")
-          }
-        },
-        error: function (res) {
-          toastr.error(res.message)
-        }
-      })
-    },
-    // displays saved event values on click
-    eventClick: function (info) {
-      $(".modal-calendar").modal("show");
-      $(".modal-calendar #cal-event-title").val(info.event.title);
-      $(".modal-calendar #cal-start-date").val(moment(info.event.start).format('YYYY-MM-DD'));
-      $(".modal-calendar #cal-end-date").val(moment(info.event.end).format('YYYY-MM-DD'));
-      $(".modal-calendar #cal-description").val(info.event.extendedProps.description);
-      $(".modal-calendar .cal-submit-event").removeClass("d-none");
-      $(".modal-calendar .remove-event").removeClass("d-none");
-      $(".modal-calendar .cal-add-event").addClass("d-none");
-      $(".modal-calendar .cancel-event").addClass("d-none");
-      $(".calendar-dropdown .dropdown-menu").find(".selected").removeClass("selected");
-      var eventCategory = info.event.extendedProps.dataEventColor;
-      var eventText = categoryText[eventCategory]
-      $(".modal-calendar .chip-wrapper .chip").remove();
-      $(".modal-calendar .chip-wrapper").append($("<div class='chip chip-" + eventCategory + "'>" +
-        "<div class='chip-body'>" +
-        "<span class='chip-text'> " + eventText + " </span>" +
-        "</div>" +
-        "</div>"));
+      getChecksByDay(day)
     },
   });
 
   // render calendar
+  $.ajax({
+    dataType: 'json',
+    url: location.origin+"/checks/calendar",
+    success: function (res) {
+      res.data.forEach((check, index, array) => {
+        calendar.addEvent({
+          id: index,
+          title: check.user,
+          start: check.start,
+          end: check.end,
+          description: check.user.name+" chegou ás "+check.start+" e saiu às "+check.end,
+          color: colors.primary,
+          dataEventColor: "blue"
+        });
+      })
+    },
+    error: function (res) {
+      console.log(res.message)
+    }
+  })
+
   calendar.render();
 
   // appends bullets to left class of header
@@ -196,3 +177,27 @@ document.addEventListener('DOMContentLoaded', function () {
     format: 'yyyy-mm-dd'
   });
 });
+
+function getChecksByDay(day){
+  $("#cal-modal").text("Eventos do dia "+day)
+  $.ajax({
+    dataType: 'json',
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: location.origin+"/checks/everyone?at="+day,
+    success: function (res) {
+      $(".modal-body").html("")
+      if (res.data.data.length > 0) {
+        res.data.data.forEach(check => {
+          $(".modal-body").append("<p><strong>"+check.user.name+"</strong> chegou às <strong>"+check.start+"</strong> e saiu às <strong>"+check.end+"</strong></p>")
+        })
+      } else {
+        $(".modal-body").append("<p><strong>Nenhum</strong> evento aconteceu hoje</p>")
+      }
+    },
+    error: function (res) {
+      toastr.error(res.message)
+    }
+  })
+}

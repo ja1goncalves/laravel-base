@@ -80,6 +80,27 @@ class UsersChecksController extends Controller
   }
 
   /**
+   * Display a listing of the resource.
+   *
+   * @param Request $request
+   * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+   */
+  public function calendar(Request $request)
+  {
+    $checks = $this->service->calendar();
+
+    $breadcrumbs = [
+      ['link'=>"dashboard-analytics",'name'=>"Início"],
+      ['link'=>"dashboard-analytics",'name'=>"Páginas"],
+      ['name'=>"Calendário"]
+    ];
+
+    if (request()->wantsJson()) return response()->json(['data' => $checks]);
+
+    return view('/pages/check/everyone', compact('checks', 'breadcrumbs'));
+  }
+
+  /**
    * Show the form for add the specified resource.
    *
    * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
